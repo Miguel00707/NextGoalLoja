@@ -3,72 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next Goal - Sua Loja de Chuteiras de Qualidade</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Chuteiras Premium - As Melhores Chuteiras do Mercado</title>
+    <meta name="description" content="Compre as melhores chuteiras de futebol de campo e futsal. Marcas como Nike, Adidas, Puma e mais.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos CSS incorporados para garantir visualização imediata */
+        :root {
+            --primary-color: #006341;
+            --primary-dark: #004d32;
+            --primary-light: #e0f0e8;
+            --secondary-color: #e63946;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --white: #fff;
+            --black: #000;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --info-color: #17a2b8;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            color: var(--dark-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+        }
+
+        /* Estilos do header, banner, produtos e footer aqui... */
+        /* (Incluir todos os estilos CSS mostrados anteriormente) */
+    </style>
 </head>
 <body>
+    <!-- Barra de Ofertas -->
+    <div class="offer-bar">
+        <p>🚨 Frete Grátis para todo Brasil em compras acima de R$ 299 | Parcele em até 12x sem juros</p>
+    </div>
+
     <!-- Cabeçalho -->
-    <header>
-        <div class="top-bar">
-            <p>Frete grátis para compras acima de R$ 299 | Parcele em até 12x</p>
-        </div>
-        
-        <div class="main-header">
+    <header class="main-header">
+        <div class="header-container">
             <div class="logo">
-                <h1>NextGoal</h1>
+                <a href="index.html">
+                    <h1>ChuteirasPremium</h1>
+                </a>
             </div>
             
             <div class="search-bar">
-                <input type="text" placeholder="Busque por modelo, marca ou categoria...">
-                <button><i class="fas fa-search"></i></button>
+                <form action="produtos.html" method="GET">
+                    <input type="text" name="q" placeholder="Busque por modelo, marca ou categoria..." aria-label="Campo de busca">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
             
             <div class="user-actions">
-                <a href="#"><i class="fas fa-user"></i></a>
-                <a href="#"><i class="fas fa-heart"></i></a>
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="login.html" class="user-icon" aria-label="Minha conta"><i class="fas fa-user"></i></a>
+                <a href="favoritos.html" class="wishlist-icon" aria-label="Favoritos"><i class="fas fa-heart"></i></a>
+                <a href="carrinho.html" class="cart-icon" aria-label="Carrinho">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
             </div>
         </div>
-        
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li class="dropdown">
-                    <a href="#">Futebol de Campo <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="#">Nike</a>
-                        <a href="#">Adidas</a>
-                        <a href="#">Puma</a>
-                        <a href="#">Mizuno</a>
-                        <a href="#">Umbro</a>
-                        <a href="#">Todas as Marcas</a>
+
+        <!-- Navegação Principal -->
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="produtos.html?categoria=campo" class="nav-link">Futebol de Campo <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-column">
+                            <h4>Marcas</h4>
+                            <a href="produtos.html?marca=nike">Nike</a>
+                            <a href="produtos.html?marca=adidas">Adidas</a>
+                            <a href="produtos.html?marca=puma">Puma</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <h4>Modelos</h4>
+                            <a href="produtos.html?modelo=mercurial">Mercurial</a>
+                            <a href="produtos.html?modelo=predator">Predator</a>
+                            <a href="produtos.html?modelo=tiempo">Tiempo</a>
+                        </div>
                     </div>
                 </li>
-                <li class="dropdown">
-                    <a href="#">Futsal <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="#">Nike</a>
-                        <a href="#">Adidas</a>
-                        <a href="#">Penalty</a>
-                        <a href="#">Joma</a>
-                        <a href="#">Umbro</a> 
-                        <a href="#">Todas as Marcas</a>
+                <li class="nav-item dropdown">
+                    <a href="produtos.html?categoria=futsal" class="nav-link">Futsal <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-column">
+                            <h4>Marcas</h4>
+                            <a href="produtos.html?marca=nike">Nike</a>
+                            <a href="produtos.html?marca=adidas">Adidas</a>
+                            <a href="produtos.html?marca=penalty">Penalty</a>
+                        </div>
                     </div>
                 </li>
-                <li><a href="#">Lançamentos</a></li>
-                <li><a href="#">Promoções</a></li>
-                <li><a href="#">Blog</a></li>
+                <li class="nav-item"><a href="produtos.html?tipo=lancamento" class="nav-link">Lançamentos</a></li>
+                <li class="nav-item"><a href="produtos.html?tipo=promocao" class="nav-link">Promoções</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Banner Principal -->
+    <!-- Banner Principal com NEXT GOAL -->
     <section class="hero-banner">
         <div class="banner-content">
-            <h2>Coleção 2024</h2>
-            <p>As melhores chuteiras com até 30% off</p>
-            <a href="#" class="btn">Compre Agora</a>
+            <img src="images/banner-principal.jpg" alt="Next Goal - As melhores chuteiras para seu jogo" class="hero-image">
+            <div class="banner-text">
+                <h2>NEXT GOAL</h2>
+                <p>Prepare-se para marcar seu próximo gol</p>
+                <a href="produtos.html" class="btn btn-primary">Ver Coleção</a>
+            </div>
         </div>
     </section>
 
@@ -76,75 +137,53 @@
     <section class="featured">
         <h2>Destaques</h2>
         <div class="products-grid">
-            <!-- Produto 1 -->
+            <!-- Produto Nike Mercurial Vapor 14 Elite -->
             <div class="product-card">
-                <span class="discount-badge">-20%</span>
-                <img src="https://via.placeholder.com/300x300" alt="Nike Mercurial Vapor">
-                <h3>Nike Mercurial Vapor 14 Elite</h3>
-                <div class="price">
-                    <span class="old-price">R$ 1.299</span>
-                    <span class="current-price">R$ 1.039</span>
+                <div class="product-badges">
+                    <span class="badge-new">Novo</span>
+                    <span class="badge-discount">-15%</span>
                 </div>
-                <button class="add-to-cart">Adicionar ao Carrinho</button>
+                <a href="produto/nike-mercurial-vapor-14-elite.html" class="product-image-link">
+                    <div class="product-image">
+                        <img src="images/products/nike-mercurial-vapor-14-elite.jpg" alt="Nike Mercurial Vapor 14 Elite FG" loading="lazy">
+                    </div>
+                </a>
+                <div class="product-info">
+                    <h3 class="product-title">
+                        <a href="produto/nike-mercurial-vapor-14-elite.html">Nike Mercurial Vapor 14 Elite FG</a>
+                    </h3>
+                    <div class="product-price">
+                        <span class="original-price">R$ 1.399</span>
+                        <span class="current-price">R$ 1.189</span>
+                    </div>
+                    <button class="btn btn-add-cart" data-product="1">Adicionar ao Carrinho</button>
+                </div>
             </div>
             
-            <!-- Produto 2 -->
+            <!-- Outros produtos... -->
             <div class="product-card">
-                <img src="https://via.placeholder.com/300x300" alt="Adidas Predator">
-                <h3>Adidas Predator Edge.1</h3>
+                <img src="images/products/adidas-predator-edge.jpg" alt="Adidas Predator Edge.1">
+                <h3>Adidas Predator Edge.1 FG</h3>
                 <div class="price">
                     <span class="current-price">R$ 1.199</span>
                 </div>
-                <button class="add-to-cart">Adicionar ao Carrinho</button>
+                <button class="btn btn-add-cart">Adicionar ao Carrinho</button>
             </div>
             
-            <!-- Produto 3 -->
             <div class="product-card">
                 <span class="new-badge">Novo</span>
-                <img src="https://via.placeholder.com/300x300" alt="Puma Future">
-                <h3>Puma Future Z 1.4</h3>
+                <img src="images/products/puma-future-z.jpg" alt="Puma Future Z 1.4">
+                <h3>Puma Future Z 1.4 FG/AG</h3>
                 <div class="price">
                     <span class="current-price">R$ 899</span>
                 </div>
-                <button class="add-to-cart">Adicionar ao Carrinho</button>
-            </div>
-            
-            <!-- Produto 4 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x300" alt="Nike Tiempo">
-                <h3>Nike Tiempo Legend 9</h3>
-                <div class="price">
-                    <span class="current-price">R$ 799</span>
-                </div>
-                <button class="add-to-cart">Adicionar ao Carrinho</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categorias -->
-    <section class="categories">
-        <h2>Navegue por Categorias</h2>
-        <div class="category-grid">
-            <div class="category-card">
-                <img src="https://via.placeholder.com/400x300" alt="Futebol de Campo">
-                <h3>Futebol de Campo</h3>
-                <a href="#" class="btn">Ver Produtos</a>
-            </div>
-            <div class="category-card">
-                <img src="https://via.placeholder.com/400x300" alt="Futsal">
-                <h3>Futsal</h3>
-                <a href="#" class="btn">Ver Produtos</a>
-            </div>
-            <div class="category-card">
-                <img src="https://via.placeholder.com/400x300" alt="Marcas">
-                <h3>Por Marcas</h3>
-                <a href="#" class="btn">Ver Marcas</a>
+                <button class="btn btn-add-to-cart">Adicionar ao Carrinho</button>
             </div>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer>
+    <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Sobre Nós</h3>
@@ -155,27 +194,12 @@
                 <ul>
                     <li><a href="#">Trocas e Devoluções</a></li>
                     <li><a href="#">Política de Privacidade</a></li>
-                    <li><a href="#">Termos de Serviço</a></li>
-                    <li><a href="#">Dúvidas Frequentes</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Atendimento</h3>
                 <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
                 <p><i class="fas fa-envelope"></i> contato@chuteiraspremium.com.br</p>
-                <p><i class="fas fa-clock"></i> Seg-Sex: 9h-18h</p>
-            </div>
-            <div class="footer-section">
-                <h3>Redes Sociais</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                </div>
-                <p>Assine nossa newsletter</p>
-                <input type="email" placeholder="Seu e-mail">
-                <button class="btn">Assinar</button>
             </div>
         </div>
         <div class="footer-bottom">
@@ -183,6 +207,32 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5511987654321" class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // JavaScript básico para funcionalidades imediatas
+        document.addEventListener('DOMContentLoaded', function() {
+            // Atualizar contador do carrinho
+            const addToCartButtons = document.querySelectorAll('.btn-add-cart, .btn-add-to-cart');
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('h3').textContent;
+                    const productPrice = productCard.querySelector('.current-price').textContent;
+                    
+                    alert(`${productName} adicionado ao carrinho!\nPreço: ${productPrice}`);
+                    
+                    const cartCount = document.querySelector('.cart-count');
+                    let currentCount = parseInt(cartCount.textContent) || 0;
+                    cartCount.textContent = currentCount + 1;
+                    cartCount.style.display = 'flex';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
